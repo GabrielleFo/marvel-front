@@ -17,15 +17,15 @@ function App() {
     <Router>
       <Header />
       <Switch>
-        <Route path="/comics">
+        <Route path="/">
+          <Character />
+        </Route>
+        {/* <Route path="/comics">
           <Comics />
         </Route>
         <Route path="/favorites">
           <Favorites />
-        </Route>
-        <Route path="/">
-          <Character />
-        </Route>
+        </Route> */}
       </Switch>
     </Router>
   );
