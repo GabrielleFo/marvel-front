@@ -1,1 +1,18 @@
 /* Other rules */
+
+/**********   HEADER     ****/
+.header {
+  display: flex;
+  border-bottom: 2px solid black;
+}
+.logo {
+  height: 150px;
+}
+nav li {
+  display: inline;
+  margin: 20px;
+  cursor: pointer;
+}
+nav {
+  text-align: center;
+}
