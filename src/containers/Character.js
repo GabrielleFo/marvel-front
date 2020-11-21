@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 //import packages
 import axios from "axios";
+//import icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Character = () => {
   const [data, setData] = useState({});
@@ -9,7 +11,9 @@ const Character = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:3100");
+      const response = await axios.get(
+        "https://backend-marvel-gaby.herokuapp.com/"
+      );
       console.log(response.data);
       setData(response.data);
       setIsloading(false);
@@ -26,14 +30,26 @@ const Character = () => {
       {isLoading === true ? (
         <p>En cours de chargement...</p>
       ) : (
-        <div>
-          <h1>Personnages</h1>
+        <div className="container-character">
           {/* <h1>{data.results[0].name}</h1> */}
           {data.results.map((elem, id) => {
+            const keys = Object.keys(elem);
             return (
               <>
-                <p>{elem.name}</p>
-                <img src={elem.ressourceURI} alt={elem.name} />
+                <Link to="/CharacterCommics/:id">
+                  <div className="character">
+                    {/* <p key={id}>
+                      {keys[4]}{" "}
+                      {(elem.thumbnail[keys[0]], elem.thumbnail[keys[1]])}
+                    </p> */}
+
+                    <img src={elem.thumbnail.path} alt={elem.name} />
+                    <h1>{elem.name}</h1>
+                    <p>{elem.description}</p>
+
+                    <FontAwesomeIcon icon="star" className="icons" />
+                  </div>
+                </Link>
               </>
             );
           })}

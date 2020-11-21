@@ -1,9 +1,14 @@
 /* Other rules */
-
+a {
+  color: black;
+  text-decoration: none;
+}
 /**********   HEADER     ****/
 .header {
   display: flex;
-  border-bottom: 2px solid black;
+
+  flex-wrap: wrap;
+  background-color: black;
 }
 .logo {
   height: 150px;
@@ -15,4 +20,37 @@ nav li {
 }
 nav {
   text-align: center;
+}
+li {
+  font-size: 30px;
+  color: white;
+}
+li:hover {
+  border-bottom: 2px solid red;
+}
+/*********** CONTAINERS ********/
+.container-character,
+.container-comics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+}
+.character,
+.comics {
+  width: 250px;
+  height: 550px;
+  border: 2px solid black;
+  margin: 10px;
+  position: relative;
+}
+
+/***********ICONES*********/
+.icons {
+  font-size: 30px;
+  color: red;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
 }
