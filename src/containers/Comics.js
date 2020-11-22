@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 //import packages
 import axios from "axios";
 //import icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Comics = () => {
   const [data, setData] = useState({});
@@ -33,7 +34,11 @@ const Comics = () => {
           {data.results.map((elem, id) => {
             return (
               <div className="comics">
-                <img src={elem.thumbnail.path} alt={elem.title} />
+                <FontAwesomeIcon icon="star" className="icons" />
+                <img
+                  src={elem.thumbnail.path + "." + elem.thumbnail.extension}
+                  alt={elem.title}
+                />
                 <h3>{elem.title}</h3>
                 <p>
                   {elem.description && elem.description.slice(0, 250) + "..."}

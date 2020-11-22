@@ -1,7 +1,7 @@
 import React from "react";
 
 const CharacterCommics = () => {
-  return <p>Hello</p>;
+  return <p>Comics personnage</p>;
 };
 
 export default CharacterCommics;

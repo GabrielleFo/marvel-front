@@ -29,14 +29,12 @@ function App() {
         <Route path="/CharacterCommics">
           <CharacterCommics />
         </Route>
-
+        <Route path="/Favorites">
+          <Favorites />
+        </Route>
         <Route path="/">
           <Character />
         </Route>
-
-        {/* <Route path="/favorites">
-          <Favorites />
-        </Route>  */}
       </Switch>
     </Router>
   );

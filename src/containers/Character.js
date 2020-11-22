@@ -31,25 +31,27 @@ const Character = () => {
         <p>En cours de chargement...</p>
       ) : (
         <div className="container-character">
-          {/* <h1>{data.results[0].name}</h1> */}
           {data.results.map((elem, id) => {
-            const keys = Object.keys(elem);
             return (
               <>
-                <Link to="/CharacterCommics/:id">
-                  <div className="character">
-                    {/* <p key={id}>
-                      {keys[4]}{" "}
-                      {(elem.thumbnail[keys[0]], elem.thumbnail[keys[1]])}
-                    </p> */}
+                <div className="character">
+                  <FontAwesomeIcon
+                    icon="star"
+                    className="icons"
+                    // onClick={() => {
+                    //   // alert("Cliqué !");
+                    // }}
+                  />
+                  <Link to="/CharacterCommics/:id">
+                    <img
+                      src={elem.thumbnail.path + "." + elem.thumbnail.extension}
+                      alt={elem.name}
+                    />
 
-                    <img src={elem.thumbnail.path} alt={elem.name} />
                     <h1>{elem.name}</h1>
                     <p>{elem.description}</p>
-
-                    <FontAwesomeIcon icon="star" className="icons" />
-                  </div>
-                </Link>
+                  </Link>
+                </div>
               </>
             );
           })}
